@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    images:
+      driver-class-name: ${driver.class.name}
+      url: ${url}
+      username: ${username}
+      password: ${password}
+      hikari:
+        connection-timeout: ${connection.timeout}
+        idle-timeout: ${idle.timeout}
+        max-lifetime: ${max.lifetime}
+        maximum-pool-size: ${max-pool-size}
+
+  jpa:
+    database-platform: "org.hibernate.dialect.MySQLDialect"

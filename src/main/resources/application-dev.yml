@@ -1,0 +1,26 @@
+spring:
+  jackson:
+    default-property-inclusion: NON_NULL
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jws-algorithms: HS256
+          jwk-set-uri: https://idp.example.org/.well-known/jwks.json
+
+  threads:
+    virtual:
+      enabled: true
+
+server:
+  tomcat:
+    remoteip:
+      protocol-header: x-forwarded-proto
+      remote-ip-header: x-forwarded-for
+  ssl:
+    enabled: true
+    key-store: ${ssl.path}
+    key-store-password: ${password}
+    key-store-type: ${ssl.store.type}
+    key-alias: tomcat
