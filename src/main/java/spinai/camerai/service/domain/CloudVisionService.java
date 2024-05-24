@@ -1,8 +1,10 @@
 package spinai.camerai.service.domain;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import java.util.List;
 
 public interface CloudVisionService {
 
-    public List<String> analyzeImageTags(String image_url);
+    public List<String> analyzeImageTags(MultipartFile image);
 }

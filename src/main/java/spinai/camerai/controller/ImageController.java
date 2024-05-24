@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import spinai.camerai.dto.request.ImageAnalysisRequest;
+import spinai.camerai.dto.request.ImageTaggingRequest;
 import spinai.camerai.dto.response.*;
 import spinai.camerai.exception.InvalidInputException;
 import spinai.camerai.model.UploadedImage;
@@ -71,8 +72,8 @@ public class ImageController {
     }
 
     @PostMapping("/tags")
-    public ResponseEntity<ImageTaggingResponse> postImageTagging(@RequestBody ImageAnalysisRequest request) {
-        ImageTaggingResponse tagging = imageService.tagImage(request.getImage_uuid(), request.getImage_url());
+    public ResponseEntity<ImageTaggingResponse> postImageTagging(@RequestBody ImageTaggingRequest request) {
+        ImageTaggingResponse tagging = imageService.tagImage(request.getImage_uuid(), request.getImage());
 
         return new ResponseEntity<>(tagging, HttpStatus.OK);
     }

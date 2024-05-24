@@ -116,10 +116,8 @@ public class ImageServiceImpl implements ImageService {
 
     @Override
     @Transactional(readOnly = false)
-    public ImageTaggingResponse tagImage(String image_uuid, String image_url) {
-        validateImageUrl(image_url);
-
-        List<String> tags = cloudVisionService.analyzeImageTags(image_url);
+    public ImageTaggingResponse tagImage(String image_uuid, MultipartFile image) {
+        List<String> tags = cloudVisionService.analyzeImageTags(image);
         String tags_uuid = UUID.randomUUID().toString();
 
         imageRepository.updateImageTagsUUID(image_uuid, tags_uuid);

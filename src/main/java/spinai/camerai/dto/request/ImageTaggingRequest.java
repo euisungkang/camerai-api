@@ -4,7 +4,7 @@ import lombok.Data;
 import org.springframework.web.multipart.MultipartFile;
 
 @Data
-public class ImageAnalysisRequest {
+public class ImageTaggingRequest {
     private String image_uuid;
-    private String image_url;
+    private MultipartFile image;
 }
