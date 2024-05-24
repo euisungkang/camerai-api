@@ -31,6 +31,7 @@ dependencies {
 	implementation("com.amazonaws:aws-java-sdk-s3:1.12.684")
 	implementation("com.fasterxml.jackson.core:jackson-databind")
 	implementation("com.google.cloud:google-cloud-vision:3.41.0")
+	implementation("org.json:json:20240303")
 	compileOnly("org.projectlombok:lombok")
 	runtimeOnly("com.mysql:mysql-connector-j")
 	annotationProcessor("org.projectlombok:lombok")

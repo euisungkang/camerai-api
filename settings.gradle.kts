@@ -1,1 +1,1 @@
-rootProject.name = "photo-viewer-backend"
+rootProject.name = "camerai-api"

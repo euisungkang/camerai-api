@@ -3,4 +3,4 @@ server:
 
 spring:
   profiles:
-    active: db,env,dev
+    active: db,env,dev,log
